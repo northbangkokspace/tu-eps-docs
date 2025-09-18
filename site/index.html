@@ -440,9 +440,10 @@
 <ul>
 <li>Read voltages and currents from solar panels and battery</li>
 <li>Monitor output channels</li>
-<li>Measure battery temperature</li>
 <li>Turn outputs ON or OFF</li>
 </ul>
+<!-- * Measure battery temperature -->
+
 <hr />
 <h2 id="system-overview">System Overview</h2>
 <table>
@@ -470,15 +471,13 @@
 <td>6 output channels with safety protections (over-voltage, over-current, short-circuit)</td>
 </tr>
 <tr>
-<td><strong>Battery Temp Sensors</strong></td>
-<td>Monitors battery temperature</td>
-</tr>
-<tr>
 <td><strong>Protocol Used</strong></td>
 <td>Based on <strong>KISS protocol</strong> with Start/End flags and command bytes</td>
 </tr>
 </tbody>
 </table>
+<!-- | **Battery Temp Sensors** | Monitors battery temperature                                                          | -->
+
 <hr />
 <h2 id="communication-frame-format">Communication Frame Format</h2>
 <p>Every command you send follows this pattern:</p>
@@ -552,12 +551,6 @@
 <td>Get ON/OFF state of output channel</td>
 </tr>
 <tr>
-<td><code>EPS_GET_TEMP_BAT</code></td>
-<td><code>0x04</code></td>
-<td>-</td>
-<td>Read battery temperature sensors</td>
-</tr>
-<tr>
 <td><code>EPS_SET_OUTPUT</code></td>
 <td><code>0x05</code></td>
 <td>Channel, State (0=OFF, 1=ON)</td>
@@ -577,6 +570,8 @@
 </tr>
 </tbody>
 </table>
+<!-- | `EPS_GET_TEMP_BAT` | `0x04`    | -                            | Read battery temperature sensors                           | -->
+
 <hr />
 <h2 id="example-commands">Example Commands</h2>
 <table>
@@ -588,10 +583,6 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Read Battery Temp</strong></td>
-<td><code>C0 00 04 C0</code></td>
-</tr>
-<tr>
 <td><strong>Read Solar Panel CH1 (INA226)</strong></td>
 <td><code>C0 00 01 00 C0</code></td>
 </tr>
@@ -601,6 +592,8 @@
 </tr>
 </tbody>
 </table>
+<!-- | **Read Battery Temp**             | `C0 00 04 C0`       | -->
+
 <hr />
 <h2 id="tips">Tips</h2>
 <ul>
