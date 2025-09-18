@@ -1,0 +1,4 @@
+site_name: EPS Docs
+docs_dir: eps-docs
+theme:
+  name: material
