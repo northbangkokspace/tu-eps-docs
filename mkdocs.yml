@@ -1,5 +1,8 @@
-site_name: EPS Docs
+site_name: TUSat Docs
 docs_dir: eps-docs
+nav:
+  - EPS: index.md
+  - Documents: document.md
 theme:
   name: material
   palette:

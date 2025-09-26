@@ -22,7 +22,7 @@ You send commands and receive data using specific formats (frames), and these co
 | **Battery**              | Charging/discharging current measured by **INA226** sensors                           |
 | **Output Channels**      | 6 output channels with safety protections (over-voltage, over-current, short-circuit) |
 | **Protocol Used**        | Based on **KISS protocol** with Start/End flags and command bytes                     |
-<!-- | **Battery Temp Sensors** | Monitors battery temperature                                                          | -->
+| **Battery Temp Sensors** | Monitors battery temperature                                                          |
 
 ---
 
@@ -51,10 +51,10 @@ Every command you send follows this pattern:
 | `EPS_GET_INA226`   | `0x01`    | Channel (0–7)                | Read voltage/current from INA226 sensor (Solar or Battery) |
 | `EPS_GET_ADM1177`  | `0x02`    | Channel (0–5)                | Read voltage/current from output channel                   |
 | `EPS_GET_OUTPUT`   | `0x03`    | Channel (0–5)                | Get ON/OFF state of output channel                         |
+| `EPS_GET_TEMP_BAT` | `0x04`    | Channel (0-1)                | Read battery temperature sensors                           |
 | `EPS_SET_OUTPUT`   | `0x05`    | Channel, State (0=OFF, 1=ON) | Turn output channel ON or OFF                              |
 | `EPS_SENSOR_INIT`  | `0xFE`    | -                            | Re-initialize all sensors                                  |
 | `EPS_GET_PARAM`    | `0xFF`    | -                            | Get configuration parameters                               |
-<!-- | `EPS_GET_TEMP_BAT` | `0x04`    | -                            | Read battery temperature sensors                           | -->
 
 ---
 
@@ -64,7 +64,7 @@ Every command you send follows this pattern:
 | --------------------------------- | ------------------- |
 | **Read Solar Panel CH1 (INA226)** | `C0 00 01 00 C0`    |
 | **Turn ON Output Channel 2**      | `C0 00 05 02 01 C0` |
-<!-- | **Read Battery Temp**             | `C0 00 04 C0`       | -->
+| **Read Battery Temp**             | `C0 00 04 00 C0`    |
 
 ---
 
