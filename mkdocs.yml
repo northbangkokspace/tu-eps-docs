@@ -1,8 +1,17 @@
 site_name: TUSat Docs
-docs_dir: eps-docs
+docs_dir: tusat-docs
 nav:
-  - EPS: index.md
+  - Home: index.md
+  - EPS: eps/eps.md
+  - OBC + Commu: obc-commu/obc-commu.md
+  - ADCS : adcs/adcs.md
   - Documents: document.md
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+plugins:
+  - glightbox
 theme:
   name: material
   palette:

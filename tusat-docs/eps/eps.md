@@ -73,3 +73,6 @@ Every command you send follows this pattern:
 * All commands **must start with `0xC0 0x00`** and end with **`0xC0`**
 * Always double-check **channel numbers** when sending commands
 * You can use a **serial terminal** or script to send frames
+
+## Block diagram
+![Block Diagram](eps-diagram.svg)
